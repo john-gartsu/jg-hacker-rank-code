@@ -7,4 +7,6 @@ if __name__ == '__main__':
     y = int(input())
     z = int(input())
     n = int(input())
-    print
+    
+     list_comp = [[x,y,z] for x in [i,j,k] for y in [i,j,k] if i+j+k != n]
+     print(list_comp)
