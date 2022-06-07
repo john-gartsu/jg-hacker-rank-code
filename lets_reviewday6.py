@@ -16,7 +16,7 @@ def even_odd_idx(s,n):
         print(end=' ')
     for j in range(1,len(chars[i]),2):
         print(chars[i][j],end='')
-    print()
+    # print()
     
 even_odd_idx(S,N)
         
