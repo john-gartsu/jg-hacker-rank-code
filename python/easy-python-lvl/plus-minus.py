@@ -24,10 +24,47 @@ import sys
 
 def plusMinus(arr):
     # Write your code here
+    pos = 0
+    neg = 0
+    zero = 0
+    # number of array elements
+    arr_length = len(arr)
+    # print(arr_length)
+    for num in arr:
+        # check each value in arr if 0, neg, or pos
+        if num == 0:
+            zero += 1
+            # return zero
+        if num > 0:
+            pos += 1
+            # return pos
+        if num < 0:
+            neg += 1
+            # return neg
+    '''   
+    only for visual aid     
+    print(f'### pos count: {pos}')
+    print(f'### neg count: {neg}')
+    print(f'### zero count: {zero}')
+    '''
+    # return f'### pos count: {pos}, ### neg count: {neg}, ### zero count: {zero}'
+    # print(pos, neg, zero) 
+    return pos, neg, zero
+    
+    pos_ratio = pos/arr_length
+
+
+        
+
+
+
+        
 
 if __name__ == '__main__':
-    n = int(input().strip())
+    # @correct
+    # n = int(input().strip())
+    # @correct
+    # arr = list(map(int, input().rstrip().split()))
 
-    arr = list(map(int, input().rstrip().split()))
-
+    arr = [1, 1, 0, -1, -2]
     plusMinus(arr)
