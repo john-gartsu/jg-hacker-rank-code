@@ -7,7 +7,6 @@ Note: This challenge introduces precision problems. The test cases are scaled to
 
 '''
 
-
 #!/bin/python3
 
 import math
@@ -28,36 +27,45 @@ def plusMinus(arr):
     pos = 0
     neg = 0
     zero = 0
-    for num in arr:
+    # loop for each element in arr starting at idx 0
+    for idx in range(0, len(arr)):
         # check each value in arr if 0, neg, or pos
-        if num == 0:
+        # @only-testing
+        # print(f'### num in arr at idx- {idx}: {arr[idx]}')
+        # check for amount of zeros  && add to count
+        if arr[idx] == 0:
             zero += 1
-            # return zero
-        if num > 0:
+        # check for number of positives (>0) && add to count
+        if arr[idx] > 0:
             pos += 1
-            # return pos
-        if num < 0:
+        # check for num < 0 (negative)
+        if arr[idx] < 0:
             neg += 1
-            # return neg
-    return pos, neg, zero
+        # return pos, neg, zero
       # number of array elements
+    #   @only-testing
+    # return f'### pos count: {pos}, ### neg count: {neg}, ### zero count: {zero}'
+    
+    # length of arr to get total
     arr_length = len(arr)
-    # print(arr_length)
+    # @local-testing
+    # return arr_length 
     pos_ratio = pos/arr_length
+    neg_ratio = neg/arr_length
+    zero_ratio = zero/arr_length
     print(pos_ratio)
+    print(neg_ratio)
+    print(zero_ratio)
 
-
-        
-
-
-
-        
 
 if __name__ == '__main__':
     # @correct
-    # n = int(input().strip())
+    n = int(input().strip())
     # @correct
-    # arr = list(map(int, input().rstrip().split()))
+    arr = list(map(int, input().rstrip().split()))
 
-    arr = [1, 1, 0, -1, -2]
+    # local test only @testing
+    # arr = [1, 1, 0, -1, -2]
+    # print(plusMinus(arr)) #@testing
+    # @correct
     plusMinus(arr)
