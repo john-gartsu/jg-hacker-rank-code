@@ -49,7 +49,7 @@ def plusMinus(arr):
     # length of arr to get total
     arr_length = len(arr)
     # @local-testing
-    # return arr_length 
+    # print(arr_length )
     pos_ratio = pos/arr_length
     neg_ratio = neg/arr_length
     zero_ratio = zero/arr_length
