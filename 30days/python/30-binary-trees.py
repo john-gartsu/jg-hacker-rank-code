@@ -1,6 +1,4 @@
-# 
-# 30-binary-search-trees
-# 
+import sys
 
 class Node:
     def __init__(self,data):
@@ -19,18 +17,16 @@ class Solution:
                 root.right=cur
         return root
 
-    def getHeight(self,root):
+    def levelOrder(self,root):
         #Write your code here
-        if root is None: 
-            return -1 
-        
-        hL = self.getHeight(root.left)
-        hR = self.getHeight(root.right)
-
-        if hL > hR:
-            return 1+hL
-        else:
-            return 1+hR 
+        queue = [root] if root else []
+    
+        while queue:
+            node = queue.pop()
+            print(node.data, end=" ")
+            
+            if node.left: queue.insert(0,node.left)
+            if node.right: queue.insert(0,node.right)
 
 T=int(input())
 myTree=Solution()
@@ -38,5 +34,4 @@ root=None
 for i in range(T):
     data=int(input())
     root=myTree.insert(root,data)
-height=myTree.getHeight(root)
-print(height)       
+myTree.levelOrder(root)
